@@ -3,10 +3,8 @@ package com.example.myapplication1;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -45,60 +43,78 @@ public class MainActivity extends AppCompatActivity {
             void setNum(int num) {this.num = num;}
         }
 
-        final EditText num = findViewById(R.id.num);
+        final TextView num = findViewById(R.id.text_result);
+
+/*============================================Number==============================================*/
+        findViewById(R.id.button_0).setOnClickListener((v)->{
+            a = 0;
+            num.setText(a);
+        });
+        findViewById(R.id.button_1).setOnClickListener((v)->{
+            a = 1;
+            num.setText(a);
+        });
+        findViewById(R.id.button_2).setOnClickListener((v)->{
+            a = 2;
+            num.setText(a);
+        });
+        findViewById(R.id.button_3).setOnClickListener((v)->{
+            a = 3;
+            num.setText(a);
+        });
+        findViewById(R.id.button_4).setOnClickListener((v)->{
+            a = 4;
+            num.setText(a);
+        });
+        findViewById(R.id.button_5).setOnClickListener((v)->{
+            a = 5;
+            num.setText(a);
+        });
+        findViewById(R.id.button_6).setOnClickListener((v)->{
+            a = 6;
+            num.setText(a);
+        });
+        findViewById(R.id.button_7).setOnClickListener((v)->{
+            a = 7;
+            num.setText(a);
+        });
+        findViewById(R.id.button_8).setOnClickListener((v)->{
+            a = 8;
+            num.setText(a);
+        });
+        findViewById(R.id.button_9).setOnClickListener((v)->{
+            a = 9;
+            num.setText(a);
+        });
+/*===============================================OP===============================================*/
         final Calc c = new Calc();
-
-        findViewById(R.id.plus).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        findViewById(R.id.button_plus).setOnClickListener((v)->{
                 Toast.makeText(ctx, "버튼클릭", Toast.LENGTH_LONG).show();
-                a = Integer.parseInt(num.getText().toString());
                 num.setText("");
-
-
-                findViewById(R.id.eq).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                findViewById(R.id.button_equal).setOnClickListener((a)->{
                         b = Integer.parseInt(num.getText().toString());
                         c.execute("+");
                         num.setText(c.getNum()+"");
-                    }
                 });
-
-            }
         });
-        findViewById(R.id.minu).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        findViewById(R.id.button_minus).setOnClickListener((v)->{
                 int int1 = Integer.parseInt(num.getText().toString());
-                Calc c = new Calc();
                // c.execute(v);
-
-            }
         });
-        findViewById(R.id.mul).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        findViewById(R.id.button_multi).setOnClickListener((v)->{
                 int int1 = Integer.parseInt(num.getText().toString());
-                Calc c = new Calc();
                // c.execute(v);
-            }
         });
-        findViewById(R.id.div).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        findViewById(R.id.button_devide).setOnClickListener((v)->{
                 int int1 = Integer.parseInt(num.getText().toString());
-                Calc c = new Calc();
                 //c.execute(v);
-            }
         });
-        findViewById(R.id.reset).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Calc c = new Calc();
+/*=============================================Option=============================================*/
+        findViewById(R.id.button_clear).setOnClickListener((v)->{
                // c.execute(v);
+        });
+        findViewById(R.id.button_back).setOnClickListener((v)->{
 
-            }
         });
     }
 }
